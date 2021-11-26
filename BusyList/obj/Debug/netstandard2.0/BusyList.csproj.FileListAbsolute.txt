@@ -1,0 +1,17 @@
+/Users/kfurlong/Projects/BusyList/BusyList/bin/Debug/netstandard2.0/BusyList.deps.json
+/Users/kfurlong/Projects/BusyList/BusyList/bin/Debug/netstandard2.0/BusyList.dll
+/Users/kfurlong/Projects/BusyList/BusyList/bin/Debug/netstandard2.0/ref/BusyList.dll
+/Users/kfurlong/Projects/BusyList/BusyList/bin/Debug/netstandard2.0/BusyList.pdb
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/Views/CreateOrEditList.xaml.g.cs
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/Views/ListDetail.xaml.g.cs
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/Views/TodoListCell.xaml.g.cs
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/BusyList.AssemblyInfoInputs.cache
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/BusyList.AssemblyInfo.cs
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/BusyList.csproj.CoreCompileInputs.cache
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/BusyList.dll
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/ref/BusyList.dll
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/BusyList.pdb
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/BusyList.csprojAssemblyReference.cache
+/Users/kfurlong/Projects/BusyList/BusyList/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs

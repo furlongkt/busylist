@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BusyList.ViewModels"
+             xmlns:converters="clr-namespace:BusyList.Utilities.Converters"
+             x:Class="BusyList.Views.ListDetail"
+             Title="{Binding ListName}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IsCompletedToTextDecoration x:Key="completed" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <ListView x:Name="lvTasks" ItemsSource="{Binding Items}" SelectionMode="None" ItemTapped="lvTasks_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnEdit"
+                                      CommandParameter="{Binding .}"
+                                      Text="Edit" IsDestructive="False" />
+                                <MenuItem Clicked="OnDelete"
+                                      CommandParameter="{Binding .}"
+                                      Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <CheckBox x:Name="ckCompleted"
+                                              CheckedChanged="ckCompleted_CheckedChanged"
+                                              IsChecked="{Binding IsCompleted, Mode=TwoWay}" />
+                                    <Label VerticalOptions="Center"
+                                    Text="{Binding Name}"
+                                    TextDecorations="{Binding Source={x:Reference ckCompleted},
+                                                                Path=IsChecked,
+                                                                Converter={StaticResource completed}}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnCreateTask" Clicked="btnCreateTask_Clicked" Text="Create New Task" Style="{StaticResource normalButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

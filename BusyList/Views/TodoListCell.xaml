@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BusyList.Views.TodoListCell">
+    <ViewCell.ContextActions>
+            <MenuItem Clicked="OnEditHandler"
+                      CommandParameter="{Binding .}"
+                      Text="Edit" />
+            <MenuItem Clicked="OnDeleteHandler"
+                      CommandParameter="{Binding .}"
+                      Text="Delete" IsDestructive="True" />
+         </ViewCell.ContextActions>
+    <ViewCell.View>
+        <StackLayout>
+            <Frame Padding="0" HasShadow="true" Margin="5">
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="lblColor" Margin="0" Padding="0" WidthRequest="5" VerticalOptions="FillAndExpand" BackgroundColor="{Binding Color}" />
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label x:Name="lblTitle" FontAttributes="Bold" Text="{Binding Title}" />
+                        <Label x:Name="lblSubtitle" Margin="0,-3,0,-3" Text="{Binding Subtitle}" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BusyList.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colors -->
+
+            <Color x:Key="blue">#1b75bc</Color>
+            <Color x:Key="darkBlue">#14558b</Color>
+            <Color x:Key="lightBlue">#248cdc</Color>
+
+            <Color x:Key="green">#3bb44b</Color>
+            <Color x:Key="darkGreen">#349b3d</Color>
+            <Color x:Key="lightGreen">#3ccc4c</Color>
+
+            <Color x:Key="darkTextColor">#2f3640</Color>
+
+            
+             <Color x:Key="PrimaryColor">#e84118</Color> <!-- yellow -->
+             <Color x:Key="TertiaryTextColor">#fbc531</Color><!-- red -->
+             <Color x:Key="SecondaryColor">#40739e</Color> <!-- blue -->
+
+
+            <!-- Styles -->
+            <Style x:Key="normalButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource blue}" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="White" />
+                <Setter Property="BarTextColor" Value="{StaticResource darkTextColor}"/>
+          </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

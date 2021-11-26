@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:BusyList.Utilities.Validation.Behaviors"
+             xmlns:validators="clr-namespace:BusyList.Utilities.Validation"
+             xmlns:converters="clr-namespace:BusyList.Utilities.Converters"
+             xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             x:Class="BusyList.Views.CreateOrEditList"
+             Title="{Binding OriginalList, Converter={StaticResource title}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:CreateOrEditTitleConverter x:Key="title" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout Padding="20" Spacing="10" VerticalOptions="Fill">
+            <StackLayout.Behaviors>
+                <behaviors:ValidationGroupBehavior x:Name="form"/>
+            </StackLayout.Behaviors>
+            <ScrollView>
+                <StackLayout>
+                    <Label x:Name="lblTitle" Text="List Title:"/>
+                    <Entry HorizontalOptions="Fill" Text="{Binding ListTitle, Mode=TwoWay}" MaxLength="25">
+                        <Entry.Behaviors>
+                            <behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                                  PropertyName="Text">
+                                <behaviors:ValidationBehavior.Validators>
+                                    <validators:RequiredValidator />
+                                </behaviors:ValidationBehavior.Validators>
+                            </behaviors:ValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Label x:Name="lblSubtitle" Text="List Subtitle:"/>
+                    <Entry HorizontalOptions="Fill" Text="{Binding ListSubtitle, Mode=TwoWay}" MaxLength="40">
+                        <Entry.Behaviors>
+                            <behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                                  PropertyName="Text">
+                                <behaviors:ValidationBehavior.Validators>
+                                    <validators:RequiredValidator />
+                                </behaviors:ValidationBehavior.Validators>
+                            </behaviors:ValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Label x:Name="lblChosenColor"
+				   HorizontalOptions="FillAndExpand"
+					HorizontalTextAlignment="Center"
+				   Padding="15"
+				   Text="{Binding ListColorHex}"
+				   BackgroundColor="{Binding ListColor}">
+                        <Label.Behaviors>
+                            <behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                                  PropertyName="Text">
+                                <behaviors:ValidationBehavior.Validators>
+                                    <validators:RequiredValidator />
+                                </behaviors:ValidationBehavior.Validators>
+                            </behaviors:ValidationBehavior>
+                        </Label.Behaviors>
+                    </Label>
+
+                    <colorpicker:ColorWheel x:Name="ColorWheel1"
+                                ShowAlphaSlider="False"
+                                Padding="5"
+                                SelectedColor="{Binding ListColor, Mode=TwoWay}"/>
+                </StackLayout>
+            </ScrollView>
+            <Button x:Name="btnSaveList"
+                    Text="Save"
+                    Style="{StaticResource normalButton}"
+                    Command="{Binding [Save]}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

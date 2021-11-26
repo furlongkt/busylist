@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BusyList"
+             xmlns:views="clr-namespace:BusyList.Views"
+             xmlns:util="clr-namespace:BusyList.Utilities"
+             x:Class="BusyList.Views.MainPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Spacing="10">
+            <Image Source="{util:ImageResource BusyList.Images.logo.png}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout  VerticalOptions="CenterAndExpand" Margin="15">
+        <Label HorizontalTextAlignment="Center" Text="Welcome to BusyList!" FontSize="Title" />
+        <Label HorizontalTextAlignment="Center" Text="A todo list application for the focused and unfinished." FontSize="Subtitle"/>
+        <Label HorizontalTextAlignment="Center" Text="To get started: click the &quot;Create new list&quot; button to create your first busy list." FontSize="Body"/>
+        <ListView x:Name="lvLists"
+                  ItemsSource="{Binding Lists}"
+                  HasUnevenRows="True"
+                  SelectionMode="None"
+                  ItemTapped="lvLists_ItemTapped">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                  <views:TodoListCell Title="{Binding Title}" Subtitle="{Binding Subtitle}" ColorAsHex="{Binding Color}" OnEdit="OnEdit" OnDelete="OnDelete"/>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnCreateList" Command="{Binding [CreateList]}" Text="Create New List" Style="{StaticResource normalButton}"/>
+    </StackLayout>
+</ContentPage>
